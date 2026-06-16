@@ -6,21 +6,21 @@
     "avatarSource": "https://ugc.production.linktr.ee/83e5a762-a1d0-4990-9a04-70ae5454ecc9_luca-ai-dev-style.png?io=true&size=avatar-v3_0",
     "kicker": "Apps • Fitness • Tech",
     "bio": {
-      "it": "Costruisco cose interessanti su internet. Dall'idea all'App Store.",
-      "en": "Building cool stuff on the internet. From idea to App Store."
+      "it": "Costruisco cose interessanti su internet, dall'idea all'App Store. Ogni giorno pubblico su TikTok i video delle mie realizzazioni.",
+      "en": "Building cool stuff on the internet, from idea to App Store. I post videos of my builds on TikTok every day."
     }
   },
   "socials": [
     {
-      "id": "linkedin",
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/luca-panteghini/",
-      "enabled": true
-    },
-    {
       "id": "tiktok",
       "label": "TikTok",
       "url": "https://www.tiktok.com/@panthe78",
+      "enabled": true
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/luca-panteghini/",
       "enabled": true
     },
     {
