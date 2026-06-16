@@ -3,7 +3,9 @@ import Scene3D from './components/Scene3D';
 import SocialBar from './components/SocialBar';
 import ProductCard from './components/ProductCard';
 import LangToggle from './components/LangToggle';
+import BgMenu from './components/BgMenu';
 import { useLang } from './hooks/useLang';
+import { useBg } from './hooks/useBg';
 import { ui } from './i18n/ui';
 import productsData from '../data/products.json';
 import socialsData from '../data/socials.json';
@@ -16,14 +18,16 @@ const year = 2026;
 
 export default function App() {
   const { lang, toggle } = useLang();
+  const { mode, setMode } = useBg();
 
   return (
     <>
-      <Scene3D />
+      <Scene3D mode={mode} />
       <div className="bg-veil" aria-hidden="true" />
 
       <main className="wrap">
         <div className="topbar">
+          <BgMenu mode={mode} onSelect={setMode} lang={lang} />
           <LangToggle lang={lang} onToggle={toggle} />
         </div>
 

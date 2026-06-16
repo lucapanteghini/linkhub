@@ -15,6 +15,12 @@ export const ui = {
     'footer.rights': 'Tutti i diritti riservati.',
     'footer.contact': 'Contattami',
     'lang.toggle': 'EN',
+    'bg.label': 'Scegli lo sfondo',
+    'bg.title': 'Sfondo',
+    'bg.aurora': 'Aurora',
+    'bg.clouds': 'Nuvole',
+    'bg.circuits': 'Circuiti',
+    'bg.sea': 'Mare',
   },
   en: {
     'meta.title': 'Luca Panteghini — Apps & Games',
@@ -28,6 +34,12 @@ export const ui = {
     'footer.rights': 'All rights reserved.',
     'footer.contact': 'Get in touch',
     'lang.toggle': 'IT',
+    'bg.label': 'Choose background',
+    'bg.title': 'Background',
+    'bg.aurora': 'Aurora',
+    'bg.clouds': 'Clouds',
+    'bg.circuits': 'Circuits',
+    'bg.sea': 'Sea',
   },
 } as const;
 

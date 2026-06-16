@@ -37,9 +37,24 @@ TikTok (@panthe78) · LinkedIn · Email (Instagram/X predisposti ma `enabled:fal
 
 ## Sfondo configurabile (`src/config.ts`)
 
-Cambiabile via URL senza ricompilare: `?bg=aurora` (default) · `?bg=orbit` (icone app in orbita) ·
-`?bg=both` · `?bg=off`. Il codice dell'orbita resta disponibile ma di default è disattivato
-(scartato perché non gradito).
+Sfondi animati selezionabili in 3 modi:
+
+- **Default del proprietario:** `DEFAULT_BG` in `src/config.ts` (attuale: `aurora`).
+- **Dal sito (visitatore):** menu a icone nella topbar (`src/components/BgMenu.tsx`); la scelta
+  è salvata in `localStorage` (`lh-bg`) — vedi hook `src/hooks/useBg.ts`.
+- **Via URL (forza, ha priorità):** `?bg=aurora|clouds|circuits|sea|orbit|both|off`.
+
+Sfondi disponibili:
+- `aurora` — shader verde/ambra Case Analyst (default) + rete di nodi "neural net" (linee con impulsi), scie di dati/meteore e particelle/scintille fluttuanti.
+- `clouds` — nuvole bianche su cielo azzurro + stormo di uccelli con battito d'ali (palette naturale).
+- `circuits` — PCB verde scuro con segnali luminosi sulle piste + robottini che camminano (occhi/antenna luminosi).
+- `sea` — mare blu con fondale basso, pesci cartoon (occhio/pinna) e bolle cartoon.
+- `orbit` / `both` / `off` — icone app in orbita / aurora+orbita / nessuno (solo via URL; orbita scartata).
+
+Implementazione: tutti gli sfondi shader usano un piano fullscreen condiviso
+(`src/components/backgrounds/ShaderBackground.tsx`) con i fragment shader in
+`src/components/backgrounds/shaders.ts` (palette naturali per nuvole/circuiti/mare,
+scelta del 2026-06-16). I nuovi sfondi sono montati da `Scene3D` in base al `mode`.
 
 ## Come aggiornare
 
