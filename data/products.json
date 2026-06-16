@@ -1,6 +1,77 @@
 {
-  "$comment": "UNICA FONTE DI VERITÀ. Aggiungere un'app = aggiungere un blocco qui. Il campo 'assetSources' è usato solo dallo script sync-assets.mjs (percorsi locali) e ignorato dal build. 'status' può essere: published | coming_soon.",
+  "$comment": "UNICA FONTE DI VERITÀ. L'ordine di questo array = ordine in pagina. 'status': published | coming_soon. 'assetSources' è usato solo da sync-assets.mjs (percorsi locali) e ignorato dal build.",
   "products": [
+    {
+      "id": "caseanalyst",
+      "name": "Case Analyst",
+      "status": "published",
+      "category": { "it": "Gioco investigativo", "en": "Investigation game" },
+      "tagline": {
+        "it": "Thriller cyberpunk di investigazione forense. Decritta le cospirazioni.",
+        "en": "Cyberpunk forensic investigation thriller. Decrypt the conspiracies."
+      },
+      "accent": "#33FF33",
+      "icon": "assets/caseanalyst/icon.webp",
+      "links": {
+        "appstore": "https://apps.apple.com/app/id6776575829",
+        "playstore": "https://play.google.com/store/apps/details?id=app.caseanalyst",
+        "website": "https://case-analyst.com"
+      },
+      "assetSources": {
+        "icon": "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/case_analyst.png",
+        "screenshots": [
+          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_1.png",
+          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_2.png",
+          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_3.png"
+        ]
+      }
+    },
+    {
+      "id": "novadrop",
+      "name": "Nova Drop",
+      "status": "published",
+      "category": { "it": "Gioco · Puzzle", "en": "Game · Puzzle" },
+      "tagline": {
+        "it": "Fondi le stelle, scatena la Supernova. Puzzle fisico cosmico.",
+        "en": "Merge the stars, unleash the Supernova. A cosmic physics puzzle."
+      },
+      "accent": "#8C6BFF",
+      "icon": "assets/novadrop/icon.webp",
+      "links": {
+        "playstore": "https://play.google.com/store/apps/details?id=com.novadrop.novadrop"
+      },
+      "appstore_pending": "https://apps.apple.com/app/id6780262100",
+      "assetSources": {
+        "icon": "/Users/lucapanteghini/ClaudeProjects/novadrop/nova_drop/assets/icon/icon_1024.png",
+        "screenshots": [
+          "/Users/lucapanteghini/ClaudeProjects/novadrop/docs/screenshots/store/ios/iphone69/01_home.png",
+          "/Users/lucapanteghini/ClaudeProjects/novadrop/docs/screenshots/store/ios/iphone69/03_gameplay.png",
+          "/Users/lucapanteghini/ClaudeProjects/novadrop/docs/screenshots/store/ios/iphone69/04_collection.png"
+        ]
+      }
+    },
+    {
+      "id": "aihandstand",
+      "name": "AI Handstand",
+      "status": "published",
+      "category": { "it": "Salute e fitness", "en": "Health & Fitness" },
+      "tagline": {
+        "it": "Il tuo coach AI per la verticale perfetta. Analisi della forma in tempo reale.",
+        "en": "Your AI coach for the perfect handstand. Real-time form analysis."
+      },
+      "accent": "#0A84FF",
+      "icon": "assets/aihandstand/icon.webp",
+      "links": {
+        "appstore": "https://apps.apple.com/us/app/ai-handstand/id6758057958"
+      },
+      "assetSources": {
+        "icon": "/Users/lucapanteghini/ClaudeProjects/HandstandApp/iOS/HandstandCoach/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+        "screenshots": [
+          "/Users/lucapanteghini/ClaudeProjects/HandstandApp/iOS/AppStoreAssets/Screenshots/6.7-inch/HandstandScreen.png",
+          "/Users/lucapanteghini/ClaudeProjects/HandstandApp/iOS/AppStoreAssets/Screenshots/6.7-inch/Premium-features.png"
+        ]
+      }
+    },
     {
       "id": "scopaai",
       "name": "ScopaAI",
@@ -12,11 +83,6 @@
       },
       "accent": "#1B5E20",
       "icon": "assets/scopaai/icon.webp",
-      "screenshots": [
-        "assets/scopaai/shot-1.webp",
-        "assets/scopaai/shot-2.webp",
-        "assets/scopaai/shot-3.webp"
-      ],
       "links": {
         "appstore": "https://apps.apple.com/us/app/scopaai/id6757974029",
         "playstore": "https://play.google.com/store/apps/details?id=com.scopaai.scopaai"
@@ -41,10 +107,6 @@
       },
       "accent": "#7B1E1E",
       "icon": "assets/briscolaai/icon.webp",
-      "screenshots": [
-        "assets/briscolaai/shot-1.webp",
-        "assets/briscolaai/shot-2.webp"
-      ],
       "links": {
         "appstore": "https://apps.apple.com/us/app/briscola-ai/id6759338400",
         "playstore": "https://play.google.com/store/apps/details?id=com.briscolaai.briscolaai"
@@ -54,36 +116,6 @@
         "screenshots": [
           "/Users/lucapanteghini/ClaudeProjects/Briscola/screenshots/01_home_6.7.png",
           "/Users/lucapanteghini/ClaudeProjects/Briscola/screenshots/02_game_6.7.png"
-        ]
-      }
-    },
-    {
-      "id": "caseanalyst",
-      "name": "Case Analyst",
-      "status": "published",
-      "category": { "it": "Gioco investigativo", "en": "Investigation game" },
-      "tagline": {
-        "it": "Thriller cyberpunk di investigazione forense. Decritta le cospirazioni.",
-        "en": "Cyberpunk forensic investigation thriller. Decrypt the conspiracies."
-      },
-      "accent": "#33FF33",
-      "icon": "assets/caseanalyst/icon.webp",
-      "screenshots": [
-        "assets/caseanalyst/shot-1.webp",
-        "assets/caseanalyst/shot-2.webp",
-        "assets/caseanalyst/shot-3.webp"
-      ],
-      "links": {
-        "appstore": "https://apps.apple.com/app/id6776575829",
-        "playstore": "https://play.google.com/store/apps/details?id=app.caseanalyst",
-        "website": "https://case-analyst.com"
-      },
-      "assetSources": {
-        "icon": "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/case_analyst.png",
-        "screenshots": [
-          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_1.png",
-          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_2.png",
-          "/Users/lucapanteghini/ClaudeProjects/case-analyst-landing-recovered/assets/images/screenshot_3.png"
         ]
       }
     }

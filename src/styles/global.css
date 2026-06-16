@@ -243,6 +243,18 @@ a {
   height: 15px;
 }
 
+.store-btn--soon {
+  cursor: default;
+  color: var(--text-dim);
+  background: transparent;
+  border-style: dashed;
+}
+
+.store-btn--soon:hover {
+  border-color: var(--border);
+  background: transparent;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   margin-top: 48px;

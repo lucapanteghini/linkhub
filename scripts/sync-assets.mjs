@@ -19,6 +19,7 @@ import sharp from 'sharp';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const PRODUCTS = join(ROOT, 'data', 'products.json');
+const SOCIALS = join(ROOT, 'data', 'socials.json');
 const OUT_BASE = join(ROOT, 'public', 'assets');
 
 const ICON_SIZE = 256; // l'icona è renderizzata a 72px → 256 copre i display retina
@@ -47,8 +48,51 @@ async function emitShot(src, destDir, i) {
   console.log(`  ✓ shot-${i + 1}.webp`);
 }
 
+const AVATAR_SIZE = 256;
+
+async function emitAvatar(source) {
+  const destDir = join(OUT_BASE, 'profile');
+  await mkdir(destDir, { recursive: true });
+  const dest = join(destDir, 'avatar.webp');
+
+  let input;
+  if (/^https?:\/\//.test(source)) {
+    console.log(`\n• Avatar (download)\n  ${source}`);
+    const res = await fetch(source, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    if (!res.ok) {
+      missing++;
+      console.warn(`  ⚠ download fallito: HTTP ${res.status}`);
+      return;
+    }
+    input = Buffer.from(await res.arrayBuffer());
+  } else {
+    console.log(`\n• Avatar (locale)`);
+    if (!existsSync(source)) {
+      missing++;
+      console.warn(`  ⚠ avatar mancante: ${source}`);
+      return;
+    }
+    input = source;
+  }
+  await sharp(input)
+    .resize(AVATAR_SIZE, AVATAR_SIZE, { fit: 'cover' })
+    .webp({ quality: 90 })
+    .toFile(dest);
+  ok++;
+  console.log(`  ✓ profile/avatar.webp`);
+}
+
 async function run() {
   const data = JSON.parse(await readFile(PRODUCTS, 'utf8'));
+
+  // Avatar profilo (da URL remoto o percorso locale, definito in socials.json)
+  try {
+    const socials = JSON.parse(await readFile(SOCIALS, 'utf8'));
+    const src = socials.profile?.avatarSource;
+    if (src) await emitAvatar(src);
+  } catch (e) {
+    console.warn('  ⚠ impossibile leggere socials.json per avatar:', e.message);
+  }
 
   for (const p of data.products) {
     const sources = p.assetSources;

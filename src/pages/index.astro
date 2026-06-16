@@ -6,15 +6,9 @@ import { ui } from '../i18n/ui';
 import productsData from '../../data/products.json';
 import socialsData from '../../data/socials.json';
 
-const products = productsData.products.filter((p: any) => p.status === 'published');
+const products = productsData.products;
 const { profile } = socialsData;
 const year = 2026;
-const initials = profile.name
-  .split(' ')
-  .map((w: string) => w[0])
-  .join('')
-  .slice(0, 2)
-  .toUpperCase();
 const contactEmail =
   socialsData.socials.find((s: any) => s.id === 'email')?.url || 'mailto:luca.panteghini@nurale.com';
 ---
@@ -29,7 +23,13 @@ const contactEmail =
     </div>
 
     <header class="profile">
-      <div class="profile__avatar profile__avatar--placeholder" aria-hidden="true">{initials}</div>
+      <img
+        class="profile__avatar"
+        src={`/${profile.avatar}`}
+        alt={profile.name}
+        width="92"
+        height="92"
+      />
       <h1 class="profile__name">{profile.name}</h1>
       <p class="profile__bio">
         <span data-lang="it">{profile.bio.it}</span>
