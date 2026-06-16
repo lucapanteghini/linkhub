@@ -38,9 +38,9 @@
       "accent": "#8C6BFF",
       "icon": "assets/novadrop/icon.webp",
       "links": {
+        "appstore": "https://apps.apple.com/app/id6780262100",
         "playstore": "https://play.google.com/store/apps/details?id=com.novadrop.novadrop"
       },
-      "appstore_pending": "https://apps.apple.com/app/id6780262100",
       "assetSources": {
         "icon": "/Users/lucapanteghini/ClaudeProjects/novadrop/nova_drop/assets/icon/icon_1024.png",
         "screenshots": [
