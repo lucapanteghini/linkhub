@@ -1,0 +1,13 @@
+{
+  // Config per il deploy come Worker con asset statici (flusso "Workers Builds").
+  // Build command: npm run build  →  genera ./dist
+  // Deploy command: npx wrangler deploy
+  // NB: con il flusso "Pages" classico questo file non serve (le impostazioni
+  // build stanno nel dashboard) e viene ignorato.
+  "name": "linkhub",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
