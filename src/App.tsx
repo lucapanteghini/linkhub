@@ -27,8 +27,11 @@ export default function App() {
 
       <main className="wrap">
         <div className="topbar">
-          <BgMenu mode={mode} onSelect={setMode} lang={lang} />
-          <LangToggle lang={lang} onToggle={toggle} />
+          <SocialBar />
+          <div className="topbar__controls">
+            <BgMenu mode={mode} onSelect={setMode} lang={lang} />
+            <LangToggle lang={lang} onToggle={toggle} />
+          </div>
         </div>
 
         <header className="hero">
@@ -68,18 +71,7 @@ export default function App() {
           >
             {profile.bio[lang]}
           </motion.p>
-
-          <SocialBar />
         </header>
-
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          {ui[lang]['apps.heading']}
-        </motion.h2>
 
         <motion.section
           className="cards"

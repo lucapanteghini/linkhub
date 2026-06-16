@@ -57,12 +57,17 @@ a {
   z-index: 1;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 28px 20px 72px;
+  padding: 16px 20px 72px;
 }
 
 .topbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.topbar__controls {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -177,14 +182,14 @@ a {
 /* ---------- hero ---------- */
 .hero {
   text-align: center;
-  padding: 18px 0 34px;
+  padding: 4px 0 22px;
 }
 
 .hero__avatar {
   position: relative;
   width: 120px;
   height: 120px;
-  margin: 0 auto 22px;
+  margin: 0 auto 16px;
 }
 .hero__avatar img {
   position: relative;
@@ -243,19 +248,18 @@ a {
   font-size: 16px;
 }
 
-/* ---------- socials ---------- */
+/* ---------- socials (nella topbar) ---------- */
 .socials {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 26px;
+  align-items: center;
+  gap: 8px;
 }
 .social {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
+  border-radius: 999px;
   border: 1px solid var(--glass-brd);
   background: var(--glass);
   backdrop-filter: blur(12px);
@@ -268,20 +272,8 @@ a {
   box-shadow: 0 0 22px rgba(51, 255, 51, 0.25);
 }
 .social__icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* ---------- section title ---------- */
-.section-title {
-  text-align: center;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin: 26px 0 22px;
+  width: 18px;
+  height: 18px;
 }
 
 /* ---------- cards ---------- */
@@ -456,6 +448,26 @@ a {
   }
   .card__links {
     justify-content: center;
+  }
+  /* topbar compatta: tutto su una riga */
+  .topbar {
+    gap: 8px;
+  }
+  .topbar__controls {
+    gap: 8px;
+  }
+  .socials {
+    gap: 6px;
+  }
+  .social {
+    width: 34px;
+    height: 34px;
+  }
+  .bg-menu__btn span {
+    display: none;
+  }
+  .bg-menu__btn {
+    padding: 8px 10px;
   }
 }
 
