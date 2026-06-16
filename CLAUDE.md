@@ -87,8 +87,25 @@ Workers & Pages → linkhub → Metrics → Enable. Il beacon è iniettato autom
 - AI Handstand risultata già pubblicata (scoperto dal Linktree, App Store id6758057958 + Play).
 - Nova Drop: Play live + App Store (id6780262100) impostato.
 
+## SEO / GEO (farsi trovare anche dagli LLM)
+
+Il sito è una SPA: l'HTML statico avrebbe `#root` vuoto e i crawler degli LLM (ClaudeBot,
+GPTBot, PerplexityBot, Google-Extended…) **non eseguono JS**. Risolto con un plugin Vite
+in `vite.config.ts` (`seoPlugin`), tutto **data-driven da `data/*.json`**:
+
+- **Fallback statico** iniettato dentro `#root` (bio + lista app con link + social) → crawler/LLM
+  leggono i contenuti senza JS. React lo rimpiazza al mount (`createRoot().render`).
+- **`<head>`**: canonical + `og:url`/`og:image`/`og:locale`/`og:site_name` + `twitter:image` + `author`.
+- **JSON-LD**: `Person` (con `sameAs` social) + `WebSite` + `ItemList` di `SoftwareApplication`.
+- **Build (`closeBundle`)** genera in `dist/`: `robots.txt`, `sitemap.xml`, `llms.txt`.
+- **OG image** 1200×630: `npm run gen:og` (`scripts/gen-og.mjs`, palette Case Analyst) →
+  `public/assets/og.png` (committata). Rigenerare se cambiano nome/app/tagline.
+
+Canonico impostato su `https://games.nurale.it/` (gestisce il doppio dominio con `*.pages.dev`).
+
 ## Aperto / TODO
 
 - **Switch finale:** aggiornare il link nelle bio social verso `https://games.nurale.it/` e dismettere Linktree.
+- Dopo il deploy: verificare anteprima con i debugger di LinkedIn/Facebook e il Rich Results Test di Google.
 - Eventuale sezione "coming soon" separata per app non pubblicate.
 - Attivare Instagram/X quando disponibili (in `data/socials.json`).
