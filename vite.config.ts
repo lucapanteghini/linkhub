@@ -67,7 +67,9 @@ function seoPlugin(): Plugin {
       const socialHtml = links
         .map((s) => `<a href="${escAttr(s.url)}">${escHtml(s.label)}</a>`)
         .join(' · ');
-      const fallback = `<article>
+      // display:none → nessun flash per l'utente; il testo resta nel markup per crawler/LLM
+      // (Google indicizza dal DOM renderizzato da React, i bot senza JS leggono l'HTML grezzo).
+      const fallback = `<article style="display:none">
 <p>${escHtml(profile.kicker)}</p>
 <h1>${escHtml(profile.name)}</h1>
 <p>${escHtml(profile.bio.it)}</p>
