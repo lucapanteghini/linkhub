@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# logs
+npm-debug.log*
+*.log
+
+# env / secrets
+.env
+.env.*
+*.json.key
+nurale-*.json

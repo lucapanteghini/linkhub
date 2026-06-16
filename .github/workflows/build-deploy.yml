@@ -1,0 +1,25 @@
+name: refresh-site
+
+# Netlify ricostruisce e pubblica automaticamente ad ogni push (integrazione Git nativa).
+# Questo workflow serve solo al refresh periodico: pinga il build hook di Netlify una volta
+# a settimana, così eventuali dati "live" (es. rating store) vengono rigenerati.
+#
+# Richiede il secret NETLIFY_BUILD_HOOK (URL del build hook di Netlify).
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # ogni lunedì alle 06:00 UTC
+  workflow_dispatch: {} # avvio manuale dal tab Actions
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        run: |
+          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            echo "NETLIFY_BUILD_HOOK non configurato: salto."
+            exit 0
+          fi
+          curl -fsSL -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          echo "Build Netlify avviata."

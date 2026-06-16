@@ -1,0 +1,43 @@
+{
+  "$comment": "Link social/contatto. Aggiungere Instagram/X quando disponibili: basta aggiungere un blocco con 'enabled': true.",
+  "profile": {
+    "name": "Luca Panteghini",
+    "avatar": "assets/profile/avatar.webp",
+    "bio": {
+      "it": "Costruisco app e giochi indie. Carte italiane, puzzle e qualche esperimento.",
+      "en": "I build indie apps and games. Italian card games, puzzles and a few experiments."
+    }
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/luca-panteghini/",
+      "enabled": true
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@panthe78",
+      "enabled": true
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "url": "mailto:luca.panteghini@nurale.com",
+      "enabled": true
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "",
+      "enabled": false
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "url": "",
+      "enabled": false
+    }
+  ]
+}
