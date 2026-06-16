@@ -1,0 +1,12 @@
+# Cloudflare Pages — header HTTP. Vite copia public/ in dist/, quindi questo
+# file finisce in dist/_headers e viene letto da Cloudflare Pages.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Asset con contenuto stabile: cache lunga
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
