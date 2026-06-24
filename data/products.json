@@ -120,6 +120,30 @@
           "/Users/lucapanteghini/ClaudeProjects/Briscola/screenshots/02_game_6.7.png"
         ]
       }
+    },
+    {
+      "id": "chargeflow",
+      "name": "ChargeFlow",
+      "status": "published",
+      "category": { "it": "Utility · Auto elettriche", "en": "Utility · EV" },
+      "tagline": {
+        "it": "Calcola tempo e costo della ricarica EV in pochi secondi, offline.",
+        "en": "Estimate your EV charging time and cost in seconds — offline, no account."
+      },
+      "accent": "#00E5A8",
+      "icon": "assets/chargeflow/icon.webp",
+      "links": {
+        "appstore": "https://apps.apple.com/app/id6766921795",
+        "playstore": "https://play.google.com/store/apps/details?id=com.nurale.evcalc.chargeflow"
+      },
+      "assetSources": {
+        "icon": "/Users/lucapanteghini/ClaudeProjects/ev-charging-calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+        "screenshots": [
+          "/Users/lucapanteghini/ClaudeProjects/ev-charging-calculator/docs/store/screenshots/ios/01_home.png",
+          "/Users/lucapanteghini/ClaudeProjects/ev-charging-calculator/docs/store/screenshots/ios/02_session_result.png",
+          "/Users/lucapanteghini/ClaudeProjects/ev-charging-calculator/docs/store/screenshots/ios/03_charger_compare.png"
+        ]
+      }
     }
   ]
 }
