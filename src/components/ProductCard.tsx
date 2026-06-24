@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { AppleIcon, PlayIcon, WebIcon } from './icons';
+import { AppleIcon, PlayIcon, SteamIcon, WebIcon } from './icons';
 import { ui, type Lang } from '../i18n/ui';
 
 type Product = {
@@ -11,7 +11,7 @@ type Product = {
   tagline: { it: string; en: string };
   accent: string;
   icon: string;
-  links: { appstore?: string; playstore?: string; website?: string };
+  links: { appstore?: string; playstore?: string; steam?: string; website?: string };
 };
 
 export default function ProductCard({ product, lang }: { product: Product; lang: Lang }) {
@@ -83,6 +83,12 @@ export default function ProductCard({ product, lang }: { product: Product; lang:
               <a className="store-btn" href={links.playstore} target="_blank" rel="noopener noreferrer">
                 <PlayIcon className="store-btn__icon" />
                 {ui[lang]['cta.playstore']}
+              </a>
+            )}
+            {!comingSoon && links.steam && (
+              <a className="store-btn store-btn--accent" href={links.steam} target="_blank" rel="noopener noreferrer">
+                <SteamIcon className="store-btn__icon" />
+                {ui[lang]['cta.steam']}
               </a>
             )}
             {!comingSoon && links.website && (
