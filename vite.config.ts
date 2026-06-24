@@ -59,9 +59,12 @@ function seoPlugin(): Plugin {
       const appsHtml = published
         .map((p) => {
           const url = p.links.appstore || p.links.website || p.links.playstore || '#';
+          const steam = p.links.steam
+            ? ` · <a href="${escAttr(p.links.steam)}">Wishlist on Steam</a>`
+            : '';
           return `<li><a href="${escAttr(url)}"><strong>${escHtml(p.name)}</strong> — ${escHtml(
             p.category.it,
-          )}: ${escHtml(p.tagline.it)}</a></li>`;
+          )}: ${escHtml(p.tagline.it)}</a>${steam}</li>`;
         })
         .join('');
       const socialHtml = links
@@ -101,7 +104,8 @@ function seoPlugin(): Plugin {
       const appLines = published
         .map((p) => {
           const url = p.links.appstore || p.links.website || p.links.playstore || `${SITE_URL}/`;
-          return `- [${p.name}](${url}): ${p.tagline.en}`;
+          const steam = p.links.steam ? ` — Wishlist on Steam: ${p.links.steam}` : '';
+          return `- [${p.name}](${url}): ${p.tagline.en}${steam}`;
         })
         .join('\n');
       writeFileSync(
