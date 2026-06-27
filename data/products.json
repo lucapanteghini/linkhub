@@ -40,7 +40,8 @@
       "icon": "assets/novadrop/icon.webp",
       "links": {
         "appstore": "https://apps.apple.com/app/id6780262100",
-        "playstore": "https://play.google.com/store/apps/details?id=com.novadrop.novadrop"
+        "playstore": "https://play.google.com/store/apps/details?id=com.novadrop.novadrop",
+        "website": "https://novadrop.nurale.games"
       },
       "assetSources": {
         "icon": "/Users/lucapanteghini/ClaudeProjects/novadrop/nova_drop/assets/icon/icon_1024.png",
