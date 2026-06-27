@@ -8,7 +8,7 @@ vedi anche `README.md`; per il documento di design iniziale vedi `PROPOSAL.md`.
 Hub personale "link-in-bio" di **Luca Panteghini**, sostituto di `linktr.ee/lucaspanthe`.
 Una pagina statica di proprietà che raccoglie le sue app pubblicate e i suoi social.
 
-- **Live (dominio custom):** https://games.nurale.it/
+- **Live (dominio base):** https://nurale.games/ (rispondono anche `www.nurale.games` e `games.nurale.it`)
 - **Live (Pages):** https://linkhub-akv.pages.dev/
 - **Repo:** https://github.com/lucapanteghini/linkhub (pubblico)
 
@@ -85,7 +85,7 @@ Workers & Pages → linkhub → Metrics → Enable. Il beacon è iniettato autom
 - Bio dal claim TikTok ("Apps • Fitness • Tech / from idea to App Store" + video quotidiani).
 - Hosting: valutati GitHub Pages / Netlify / Cloudflare → scelto **Cloudflare Pages** (statico + analytics gratis incluse).
 - AI Handstand risultata già pubblicata (scoperto dal Linktree, App Store id6758057958 + Play).
-- Nova Drop: Play live + App Store (id6780262100) impostato.
+- Nova Drop: Play live + App Store (id6780262100); sito `novadrop.nurale.games` aggiunto come link "Sito" sulla card.
 
 ## SEO / GEO (farsi trovare anche dagli LLM)
 
@@ -101,11 +101,11 @@ in `vite.config.ts` (`seoPlugin`), tutto **data-driven da `data/*.json`**:
 - **OG image** 1200×630: `npm run gen:og` (`scripts/gen-og.mjs`, palette Case Analyst) →
   `public/assets/og.png` (committata). Rigenerare se cambiano nome/app/tagline.
 
-Canonico impostato su `https://games.nurale.it/` (gestisce il doppio dominio con `*.pages.dev`).
+Canonico impostato su `https://nurale.games/` (gestisce il doppio dominio con `*.pages.dev`).
 
 ## Aperto / TODO
 
-- **Switch finale:** aggiornare il link nelle bio social verso `https://games.nurale.it/` e dismettere Linktree.
+- **Switch finale:** aggiornare il link nelle bio social verso `https://nurale.games/` e dismettere Linktree.
 - Dopo il deploy: verificare anteprima con i debugger di LinkedIn/Facebook e il Rich Results Test di Google.
 - Eventuale sezione "coming soon" separata per app non pubblicate.
 - Attivare Instagram/X quando disponibili (in `data/socials.json`).
