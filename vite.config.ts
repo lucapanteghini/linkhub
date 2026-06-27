@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const SITE_URL = 'https://games.nurale.it';
+const SITE_URL = 'https://nurale.games';
 
 type Json = Record<string, any>;
 

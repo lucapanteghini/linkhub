@@ -69,7 +69,7 @@ const bg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http:
         font-weight="600" fill="#8B93A7">${esc(apps.join('   ·   '))}</text>
 
   <text x="80" y="572" font-family="Helvetica, Arial, sans-serif" font-size="25"
-        font-weight="700" letter-spacing="2" fill="#33FF33">games.nurale.it</text>
+        font-weight="700" letter-spacing="2" fill="#33FF33">nurale.games</text>
 
   <!-- disco di fondo + anello attorno alla foto -->
   <circle cx="${CX}" cy="${CY}" r="${R + 12}" fill="#33FF33" fill-opacity="0.10"/>
