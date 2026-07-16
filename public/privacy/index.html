@@ -72,7 +72,7 @@
     <p class="sub">Un'unica informativa valida per tutte le app di Luca Panteghini / <strong>NURALE</strong>.</p>
     <p class="updated">Ultimo aggiornamento: luglio 2026</p>
 
-    <p>Questa informativa descrive come trattiamo i dati nelle nostre applicazioni per dispositivi mobili e PC. Il titolare del trattamento è <strong>Luca Panteghini (NURALE)</strong>, contattabile a <a href="mailto:luca.panteghini@nurale.com">luca.panteghini@nurale.com</a>.</p>
+    <p>Questa informativa descrive come trattiamo i dati nelle nostre applicazioni per dispositivi mobili e PC. Il titolare del trattamento è <strong>Luca Panteghini (NURALE)</strong>, contattabile a <a class="mail" data-u="support" data-d="nurale.it">support [at] nurale.it</a>.</p>
 
     <h2>1. App coperte da questa informativa</h2>
     <ul class="apps">
@@ -127,7 +127,7 @@
     <p>Potremmo aggiornare questa informativa; le modifiche saranno pubblicate su questa pagina con la nuova data di aggiornamento.</p>
 
     <h2>10. Contatti</h2>
-    <p>Per qualsiasi domanda: <a href="mailto:luca.panteghini@nurale.com">luca.panteghini@nurale.com</a></p>
+    <p>Per qualsiasi domanda: <a class="mail" data-u="support" data-d="nurale.it">support [at] nurale.it</a></p>
   </div>
 
   <!-- ===================== ENGLISH ===================== -->
@@ -136,7 +136,7 @@
     <p class="sub">A single policy covering all apps by Luca Panteghini / <strong>NURALE</strong>.</p>
     <p class="updated">Last updated: July 2026</p>
 
-    <p>This policy explains how we handle data across our mobile and PC applications. The data controller is <strong>Luca Panteghini (NURALE)</strong>, reachable at <a href="mailto:luca.panteghini@nurale.com">luca.panteghini@nurale.com</a>.</p>
+    <p>This policy explains how we handle data across our mobile and PC applications. The data controller is <strong>Luca Panteghini (NURALE)</strong>, reachable at <a class="mail" data-u="support" data-d="nurale.it">support [at] nurale.it</a>.</p>
 
     <h2>1. Apps covered by this policy</h2>
     <ul class="apps">
@@ -191,7 +191,7 @@
     <p>We may update this policy; changes will be posted on this page with a new "last updated" date.</p>
 
     <h2>10. Contact</h2>
-    <p>Any questions: <a href="mailto:luca.panteghini@nurale.com">luca.panteghini@nurale.com</a></p>
+    <p>Any questions: <a class="mail" data-u="support" data-d="nurale.it">support [at] nurale.it</a></p>
   </div>
 
   <hr />
@@ -212,6 +212,13 @@
     var saved; try { saved = localStorage.getItem('nurale-priv-lang'); } catch (e) {}
     var nav = (navigator.language || 'it').slice(0, 2);
     set(saved || (nav === 'en' ? 'en' : 'it'));
+
+    // Email assemblata a runtime: nel sorgente non compare mai l'indirizzo completo.
+    document.querySelectorAll('a.mail').forEach(function (a) {
+      var addr = a.dataset.u + String.fromCharCode(64) + a.dataset.d;
+      a.setAttribute('href', 'mailto:' + addr);
+      a.textContent = addr;
+    });
   })();
 </script>
 </body>
