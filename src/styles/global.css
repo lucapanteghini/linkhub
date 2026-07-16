@@ -450,6 +450,19 @@ a {
   font-size: 12.5px;
   color: var(--text-dim);
 }
+.footer__links {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+}
+.footer__links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: color 0.2s ease;
+}
+.footer__links a:hover {
+  color: #33ff33;
+}
 
 /* ---------- mobile ---------- */
 @media (max-width: 480px) {

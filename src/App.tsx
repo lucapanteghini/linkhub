@@ -93,6 +93,9 @@ export default function App() {
           <p className="footer__rights">
             © {year} {profile.name}. {ui[lang]['footer.rights']}
           </p>
+          <p className="footer__links">
+            <a href="/privacy">{ui[lang]['footer.privacy']}</a>
+          </p>
         </footer>
       </main>
     </>
