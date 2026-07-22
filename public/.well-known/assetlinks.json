@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.scopaai.scopaai",
+      "sha256_cert_fingerprints": [
+        "3B:FA:EC:9D:17:E3:ED:EA:AC:09:77:8C:61:ED:B0:56:55:47:23:53:F9:86:41:D5:68:DF:ED:B4:13:78:A9:63"
+      ]
+    }
+  }
+]

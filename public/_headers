@@ -10,3 +10,9 @@
 # Asset con contenuto stabile: cache lunga
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Deep link / universal link (ScopaAI amici). L'AASA iOS è senza estensione →
+# forziamo application/json. assetlinks.json ha già .json (content-type ok).
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
