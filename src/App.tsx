@@ -95,6 +95,8 @@ export default function App() {
           </p>
           <p className="footer__links">
             <a href="/privacy">{ui[lang]['footer.privacy']}</a>
+            {' · '}
+            <a href="/terms">{ui[lang]['footer.terms']}</a>
           </p>
         </footer>
       </main>
