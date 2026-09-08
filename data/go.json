@@ -1,0 +1,11 @@
+{
+  "_doc": "Tabella dei redirect `/go/<slug>` (functions/go/[slug].ts). Ogni voce: link store, dove mandare chi non ha uno store (desktop senza `store=`), nome campagna per UTM/`ct`. `ios_pt` è il provider token di App Store Connect → App Analytics → Campaigns (senza, il click su iOS si conta solo qui, non in App Analytics). `ga4` è la property che conta i redirect (Measurement Protocol; il segreto sta nella variabile d'ambiente GA4_DEMO_API_SECRET del progetto Pages).",
+  "scopa": {
+    "ios": "https://apps.apple.com/it/app/scopaai/id6757974029",
+    "android": "https://play.google.com/store/apps/details?id=com.scopaai.scopaai",
+    "fallback": "https://nurale.games/",
+    "campaign": "scopa_demo_web",
+    "ios_pt": "",
+    "ga4": { "measurement_id": "G-PDBPG0Y4HP", "event": "demo_store_redirect" }
+  }
+}

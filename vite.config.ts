@@ -93,7 +93,7 @@ function seoPlugin(): Plugin {
 
       writeFileSync(
         join(out, 'robots.txt'),
-        `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+        `User-agent: *\nAllow: /\nDisallow: /go/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
       );
 
       writeFileSync(

@@ -71,6 +71,24 @@ scelta del 2026-06-16). I nuovi sfondi sono montati da `Scene3D` in base al `mod
 - **Header** sicurezza/cache in `public/_headers`.
 - `wrangler.jsonc` presente per l'eventuale flusso "Workers" (`npx wrangler deploy`); ignorato dal flusso Pages.
 
+## Redirect `/go/<slug>` (Pages Function, dal 8 set 2026)
+
+`functions/go/[slug].ts` + tabella `data/go.json`. Nato per la **demo web di ScopaAI dentro Gestify**
+(repo Scopa, `docs/demo-web-gestify.md`): badge e QR della demo puntano a
+`https://nurale.games/go/scopa?src=gestify[&store=ios|android]`, che
+- sceglie lo store: parametro `store` → User-Agent → `fallback` (l'hub, per il desktop);
+- aggiunge l'attribuzione: Play `referrer=utm_source%3D…` (Play Console), App Store `ct=`/`mt=8`
+  (+ `pt=` se in `go.json` c'è il provider token di App Analytics, oggi vuoto);
+- **conta** il click con un evento GA4 `demo_store_redirect` (Measurement Protocol) sulla property
+  «ScopaAI Demo Web» (`G-PDBPG0Y4HP`, dimensioni `slug src store chosen_by`). Il segreto MP sta nella
+  variabile **`GA4_DEMO_API_SECRET`** del progetto Pages (Settings → Variables and secrets, Production);
+  il valore è in `Scopa/secrets/ga4-demo-mp.env`. Senza variabile il redirect funziona ma non conta.
+- `robots.txt` esclude `/go/`; risposta `302` con `Cache-Control: no-store`.
+
+Nuova app = nuova voce in `go.json`. In locale: `npm run build && npx wrangler pages dev dist`
+(legge `.dev.vars`, ignorato da git; con `GA4_MP_DEBUG=1` usa l'endpoint di validazione GA4 e logga).
+`wrangler` è devDependency solo per questo.
+
 ## Statistiche
 
 **Cloudflare Web Analytics** (privacy-friendly, no cookie/banner) attivata da

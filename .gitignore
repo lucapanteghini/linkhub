@@ -17,3 +17,7 @@ npm-debug.log*
 .env.*
 *.json.key
 nurale-*.json
+
+# wrangler (Pages Functions in locale)
+.dev.vars
+.wrangler/
