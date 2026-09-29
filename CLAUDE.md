@@ -89,6 +89,17 @@ Nuova app = nuova voce in `go.json`. In locale: `npm run build && npx wrangler p
 (legge `.dev.vars`, ignorato da git; con `GA4_MP_DEBUG=1` usa l'endpoint di validazione GA4 e logga).
 `wrangler` è devDependency solo per questo.
 
+## Pagine legali e di supporto (statiche, fuori dalla SPA)
+
+HTML autonomi in `public/<percorso>/index.html` (Vite li copia in `dist/`, Pages li serve prima del
+fallback SPA; senza file un percorso qualsiasi restituisce la home con 200):
+`/privacy/` (informativa unica), `/terms/`, `/support/`, `/delete-account/` (Born of Legends: Google Play
+vuole un URL web per chiedere l'eliminazione senza l'app). Stessi token grafici, toggle ITA/ENG con la
+chiave `nurale-priv-lang`, email assemblata a runtime (`a.mail` + `data-u`/`data-d`, `data-s` = oggetto).
+`/delete-account/` e la §4 della privacy (Born of Legends) vanno tenute allineate.
+`/app-ads.txt` NON esiste ancora (oggi risponde la home): va creato in `public/app-ads.txt` quando
+arrivano le righe AdMob.
+
 ## Statistiche
 
 **Cloudflare Web Analytics** (privacy-friendly, no cookie/banner) attivata da

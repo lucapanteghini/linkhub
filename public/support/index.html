@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  SUPPORTO — pagina unica di contatto per tutte le app di Luca Panteghini / NURALE.
+  Gemella di /privacy e /terms: stessi token grafici, stesso toggle IT/EN (stessa
+  chiave localStorage), stessa email assemblata a runtime.
+
+  Perché esiste (29 set 2026): App Store Connect e Google Play chiedono un
+  «URL di supporto» per ogni app; prima /support/ cadeva sul fallback della SPA
+  e mostrava la home. Serve anche a Born of Legends, che è la prima app con account
+  email e password (vedi /delete-account/).
+-->
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supporto — Luca Panteghini / NURALE</title>
+<meta name="description" content="Supporto per le app di Luca Panteghini / NURALE: Case Analyst, Nova Drop, AI Handstand, ScopaAI, BriscolaAI, ChargeFlow, Born of Legends." />
+<meta name="robots" content="index,follow" />
+<style>
+  :root{
+    --bg:#0A0A0A; --panel:#111512; --text:#E6EDE6; --dim:#8A968A;
+    --green:#33FF33; --amber:#FFB000; --line:#1e2a1e;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
+    line-height:1.65; font-size:16px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:32px 22px 80px}
+  a{color:var(--amber); text-decoration:none; overflow-wrap:anywhere}
+  a:hover{text-decoration:underline}
+  .top{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:28px}
+  .home{font-size:13px; letter-spacing:.04em; color:var(--dim)}
+  .home:hover{color:var(--green)}
+  .langs{display:flex; gap:6px}
+  .langs button{
+    font:inherit; font-size:12.5px; letter-spacing:.06em; cursor:pointer;
+    background:transparent; color:var(--dim); border:1px solid var(--line);
+    border-radius:999px; padding:5px 12px;
+  }
+  .langs button[aria-pressed="true"]{color:var(--bg); background:var(--green); border-color:var(--green); font-weight:700}
+  h1{
+    font-size:clamp(26px,5vw,36px); line-height:1.15; margin:0 0 6px;
+    color:var(--green); letter-spacing:-.01em; text-wrap:balance;
+  }
+  .sub{color:var(--dim); margin:0 0 4px; font-size:15px}
+  .updated{color:var(--dim); font-style:italic; font-size:13.5px; margin:0 0 30px}
+  h2{
+    font-size:19px; margin:34px 0 8px; color:var(--amber);
+    border-top:1px solid var(--line); padding-top:22px;
+  }
+  h3{font-size:15.5px; margin:20px 0 4px; color:var(--green)}
+  ul{margin:8px 0; padding-left:22px}
+  li{margin:5px 0}
+  strong{color:#fff}
+  code{background:#161b16; padding:1px 6px; border-radius:5px; color:var(--green); font-size:13.5px}
+  .apps{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 4px; padding:0; list-style:none}
+  .apps li{background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:6px 12px; font-size:13.5px; margin:0}
+  .note{background:var(--panel); border-left:3px solid var(--amber); padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:14.5px}
+  .big{font-size:18px; margin:10px 0 4px}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0 18px}
+  .foot{color:var(--dim); font-size:13px}
+  [data-lang]{display:none}
+  html[lang="it"] [data-lang="it"]{display:revert}
+  html[lang="en"] [data-lang="en"]{display:revert}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="home" href="/">← nurale.games</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set="it" aria-pressed="true">ITA</button>
+      <button type="button" data-set="en" aria-pressed="false">ENG</button>
+    </div>
+  </div>
+
+  <!-- ===================== ITALIANO ===================== -->
+  <div data-lang="it">
+    <h1>Supporto</h1>
+    <p class="sub">Assistenza per tutte le app di Luca Panteghini / <strong>NURALE</strong>.</p>
+    <p class="updated">Ultimo aggiornamento: 29 settembre 2026</p>
+
+    <h2>Contattaci</h2>
+    <p>Per problemi, domande, segnalazioni o richieste sui tuoi dati scrivici a:</p>
+    <p class="big"><a class="mail" data-u="support.nurale" data-d="gmail.com">support.nurale [at] gmail.com</a></p>
+    <p>Rispondiamo di solito entro pochi giorni lavorativi. Per aiutarci a capire il problema indica nel messaggio:</p>
+    <ul>
+      <li>il <strong>nome dell'app</strong>;</li>
+      <li>il <strong>modello del dispositivo</strong> e la versione del sistema operativo (Android o iOS);</li>
+      <li>la <strong>versione dell'app</strong> (la trovi nelle impostazioni dell'app o nella scheda dello store);</li>
+      <li>per i giochi con account online (ScopaAI, Born of Legends), il tuo <strong>nickname</strong>; per Born of Legends scrivici dall'<strong>indirizzo email con cui ti sei registrato</strong>, così possiamo riconoscere l'account.</li>
+    </ul>
+    <div class="note"><strong>Non inviarci mai la password</strong> del tuo account: non te la chiederemo in nessun caso.</div>
+
+    <h3>Born of Legends: assistenza dentro il gioco</h3>
+    <p>In Born of Legends puoi anche aprire una richiesta direttamente dal gioco: menu <strong>Altro → Supporto</strong>. La risposta arriva nello stesso elenco e ti viene segnalata nel gioco.</p>
+
+    <h2>App</h2>
+    <ul class="apps">
+      <li>Case Analyst</li><li>Nova Drop</li><li>AI Handstand</li><li>ScopaAI</li><li>BriscolaAI</li><li>ChargeFlow</li><li>Born of Legends</li>
+    </ul>
+    <p>I link agli store di ciascuna app sono nella <a href="/">pagina principale</a>.</p>
+
+    <h2>Documenti utili</h2>
+    <ul>
+      <li><a href="/privacy/">Informativa sulla Privacy</a> — quali dati trattiamo, perché e per quanto tempo.</li>
+      <li><a href="/terms/">Termini di Servizio</a> — le regole d'uso delle app.</li>
+      <li><a href="/delete-account/">Eliminazione dell'account</a> — come eliminare l'account e i dati di Born of Legends, anche senza l'app.</li>
+    </ul>
+
+    <h2>Acquisti e rimborsi</h2>
+    <p>Gli acquisti in-app sono gestiti da <strong>Apple App Store</strong> e <strong>Google Play</strong>, che si occupano anche dei rimborsi: chiedili dallo store in cui hai acquistato (<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">Apple</a>, <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play</a>). Se un acquisto non è arrivato nell'app, scrivici indicando la data e la ricevuta dello store.</p>
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div data-lang="en">
+    <h1>Support</h1>
+    <p class="sub">Help for all apps by Luca Panteghini / <strong>NURALE</strong>.</p>
+    <p class="updated">Last updated: 29 September 2026</p>
+
+    <h2>Contact us</h2>
+    <p>For problems, questions, reports or requests about your data, write to:</p>
+    <p class="big"><a class="mail" data-u="support.nurale" data-d="gmail.com">support.nurale [at] gmail.com</a></p>
+    <p>We usually reply within a few working days. To help us understand the problem, please include:</p>
+    <ul>
+      <li>the <strong>app name</strong>;</li>
+      <li>your <strong>device model</strong> and operating system version (Android or iOS);</li>
+      <li>the <strong>app version</strong> (shown in the app settings or on the store page);</li>
+      <li>for games with an online account (ScopaAI, Born of Legends), your <strong>nickname</strong>; for Born of Legends, please write from the <strong>email address you registered with</strong>, so we can recognise the account.</li>
+    </ul>
+    <div class="note"><strong>Never send us your account password</strong>: we will never ask for it.</div>
+
+    <h3>Born of Legends: in-game support</h3>
+    <p>In Born of Legends you can also open a request directly from the game: <strong>More → Support</strong> menu. The reply appears in the same list and you are notified in the game.</p>
+
+    <h2>Apps</h2>
+    <ul class="apps">
+      <li>Case Analyst</li><li>Nova Drop</li><li>AI Handstand</li><li>ScopaAI</li><li>BriscolaAI</li><li>ChargeFlow</li><li>Born of Legends</li>
+    </ul>
+    <p>Store links for each app are on the <a href="/">home page</a>.</p>
+
+    <h2>Useful documents</h2>
+    <ul>
+      <li><a href="/privacy/">Privacy Policy</a> — what data we process, why and for how long.</li>
+      <li><a href="/terms/">Terms of Service</a> — the rules for using the apps.</li>
+      <li><a href="/delete-account/">Account deletion</a> — how to delete your Born of Legends account and data, even without the app.</li>
+    </ul>
+
+    <h2>Purchases and refunds</h2>
+    <p>In-app purchases are handled by the <strong>Apple App Store</strong> and <strong>Google Play</strong>, which also handle refunds: request them from the store where you purchased (<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">Apple</a>, <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play</a>). If a purchase did not arrive in the app, write to us with the date and the store receipt.</p>
+  </div>
+
+  <hr />
+  <p class="foot" data-lang="it">© 2026 Luca Panteghini · NURALE — <a href="/">nurale.games</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Termini</a> · <a href="/delete-account/">Elimina account</a></p>
+  <p class="foot" data-lang="en">© 2026 Luca Panteghini · NURALE — <a href="/">nurale.games</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/delete-account/">Delete account</a></p>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btns = document.querySelectorAll('.langs button');
+    function set(l) {
+      root.setAttribute('lang', l);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+      // Stessa chiave di /privacy e /terms.
+      try { localStorage.setItem('nurale-priv-lang', l); } catch (e) {}
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+    var saved; try { saved = localStorage.getItem('nurale-priv-lang'); } catch (e) {}
+    var q = /[?&]lang=(it|en)\b/.exec(location.search);
+    var nav = (navigator.language || 'it').slice(0, 2);
+    set(q ? q[1] : (saved || (nav === 'en' ? 'en' : 'it')));
+
+    // Email assemblata a runtime: nel sorgente non compare mai l'indirizzo completo.
+    document.querySelectorAll('a.mail').forEach(function (a) {
+      var addr = a.dataset.u + String.fromCharCode(64) + a.dataset.d;
+      a.setAttribute('href', 'mailto:' + addr + (a.dataset.s ? '?subject=' + encodeURIComponent(a.dataset.s) : ''));
+      a.textContent = addr;
+    });
+  })();
+</script>
+</body>
+</html>

@@ -97,6 +97,8 @@ export default function App() {
             <a href="/privacy">{ui[lang]['footer.privacy']}</a>
             {' · '}
             <a href="/terms">{ui[lang]['footer.terms']}</a>
+            {' · '}
+            <a href="/support/">{ui[lang]['footer.support']}</a>
           </p>
         </footer>
       </main>
