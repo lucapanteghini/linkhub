@@ -16,3 +16,8 @@
 /.well-known/apple-app-site-association
   Content-Type: application/json
   Cache-Control: public, max-age=3600
+
+# app-ads.txt (AdMob, 19/10/2026): un solo account per tutte le app del sito
+/app-ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
