@@ -84,9 +84,12 @@ async function emitAvatar(source) {
 
 async function run() {
   const data = JSON.parse(await readFile(PRODUCTS, 'utf8'));
+  // `npm run sync -- <id> [id…]`: elabora solo quelle app (e salta l'avatar),
+  // utile quando la sorgente di un'altra app non è più sul disco.
+  const only = process.argv.slice(2);
 
   // Avatar profilo (da URL remoto o percorso locale, definito in socials.json)
-  try {
+  if (only.length === 0) try {
     const socials = JSON.parse(await readFile(SOCIALS, 'utf8'));
     const src = socials.profile?.avatarSource;
     if (src) await emitAvatar(src);
@@ -97,6 +100,7 @@ async function run() {
   for (const p of data.products) {
     const sources = p.assetSources;
     if (!sources) continue;
+    if (only.length > 0 && !only.includes(p.id)) continue;
 
     console.log(`\n• ${p.name} (${p.id})`);
     const destDir = join(OUT_BASE, p.id);

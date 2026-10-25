@@ -31,7 +31,7 @@ Tutto il contenuto vive in 2 file = unica fonte di verità. **Aggiornare = modif
 Bilingue IT/EN con toggle (hook `src/hooks/useLang.ts`, stringhe `src/i18n/ui.ts`).
 
 ### App mostrate (ordine attuale)
-1. Case Analyst · 2. Nova Drop · 3. AI Handstand · 4. ScopaAI · 5. BriscolaAI
+1. Born of Legends (lancio 1/11/2026: `availableFrom` mostra «Disponibile dal 1° novembre» fino a quel giorno) · 2. Case Analyst · 3. Nova Drop · 4. AI Handstand · 5. ScopaAI · 6. BriscolaAI · 7. ChargeFlow
 ### Social
 TikTok (@panthe78) · LinkedIn · Email (Instagram/X predisposti ma `enabled:false`).
 
@@ -60,6 +60,7 @@ scelta del 2026-06-16). I nuovi sfondi sono montati da `Scene3D` in base al `mod
 
 - **Testi/app/social:** modifica `data/*.json`.
 - **Icone/screenshot/avatar:** `npm run sync` (legge `assetSources` e `avatarSource`, ottimizza in WebP in `public/assets/`).
+  ⚠️ La sorgente di ChargeFlow non è più sul disco: il sync completo ne cancellerebbe gli asset. Per una sola app: `npm run sync -- <id>`.
 - Poi `git push` → Cloudflare ribuilda e pubblica da solo (~1 min).
 
 ## Hosting & deploy

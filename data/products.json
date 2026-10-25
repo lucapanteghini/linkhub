@@ -1,6 +1,32 @@
 {
-  "$comment": "UNICA FONTE DI VERITÀ. L'ordine di questo array = ordine in pagina. 'status': published | coming_soon. 'assetSources' è usato solo da sync-assets.mjs (percorsi locali) e ignorato dal build.",
+  "$comment": "UNICA FONTE DI VERITÀ. L'ordine di questo array = ordine in pagina. 'status': published | coming_soon. 'availableFrom' (YYYY-MM-DD, facoltativo): fino a quella data la card mostra «Disponibile dal …» sopra i link. 'assetSources' è usato solo da sync-assets.mjs (percorsi locali) e ignorato dal build.",
   "products": [
+    {
+      "id": "bornoflegends",
+      "name": "Born of Legends",
+      "status": "published",
+      "availableFrom": "2026-11-01",
+      "category": { "it": "Gioco di carte · Strategia", "en": "Card game · Strategy" },
+      "tagline": {
+        "it": "Guida gli dèi dell'Olimpo contro i Titani in 200 missioni di carte e strategia.",
+        "en": "Lead the gods of Olympus against the Titans in 200 card strategy missions."
+      },
+      "accent": "#E8B04A",
+      "icon": "assets/bornoflegends/icon.webp",
+      "links": {
+        "appstore": "https://apps.apple.com/app/id6816740698",
+        "playstore": "https://play.google.com/store/apps/details?id=com.bornoflegends.game",
+        "website": "https://bornoflegends.games"
+      },
+      "assetSources": {
+        "icon": "/Users/lucapanteghini/ClaudeProjects/NinjaGame/docs/store/titanomachia/store-icon-1024.png",
+        "screenshots": [
+          "/Users/lucapanteghini/ClaudeProjects/NinjaGame/dist/store/titanomachia/screenshots/it/apple-iphone-6.9/01_battaglia.jpg",
+          "/Users/lucapanteghini/ClaudeProjects/NinjaGame/dist/store/titanomachia/screenshots/it/apple-iphone-6.9/02_storia.jpg",
+          "/Users/lucapanteghini/ClaudeProjects/NinjaGame/dist/store/titanomachia/screenshots/it/apple-iphone-6.9/05_home.jpg"
+        ]
+      }
+    },
     {
       "id": "caseanalyst",
       "name": "Case Analyst",

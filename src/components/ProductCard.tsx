@@ -7,6 +7,7 @@ type Product = {
   id: string;
   name: string;
   status: string;
+  availableFrom?: string;
   category: { it: string; en: string };
   tagline: { it: string; en: string };
   accent: string;
@@ -17,6 +18,9 @@ type Product = {
 export default function ProductCard({ product, lang }: { product: Product; lang: Lang }) {
   const { name, accent, icon, category, tagline, links, status } = product;
   const comingSoon = status === 'coming_soon';
+  // `availableFrom` (YYYY-MM-DD): fino a quel giorno i link restano ma con la data di uscita.
+  const launch = product.availableFrom ? new Date(`${product.availableFrom}T00:00:00`) : null;
+  const upcoming = launch !== null && !comingSoon && Date.now() < launch.getTime();
 
   const ref = useRef<HTMLDivElement>(null);
   const mx = useMotionValue(0.5);
@@ -70,6 +74,15 @@ export default function ProductCard({ product, lang }: { product: Product; lang:
           <span className="card__cat">{category[lang]}</span>
           <h3 className="card__name">{name}</h3>
           <p className="card__tagline">{tagline[lang]}</p>
+
+          {upcoming && (
+            <p className="card__launch">
+              {ui[lang]['badge.from']}{' '}
+              {launch
+                .toLocaleDateString(lang === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long' })
+                .replace(lang === 'it' && launch.getDate() === 1 ? /^1 / : /$^/, '1° ')}
+            </p>
+          )}
 
           <div className="card__links">
             {comingSoon && <span className="store-btn store-btn--soon">{ui[lang]['badge.soon']}</span>}
